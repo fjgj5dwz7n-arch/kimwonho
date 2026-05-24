@@ -1,0 +1,25 @@
+---
+import PageIntro from "../components/PageIntro.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { archiveItems } from "../data/archive";
+---
+
+<BaseLayout title="아카이브">
+  <PageIntro
+    eyebrow="Archive"
+    title="아카이브"
+    description="초고, 연구 노트, 서지, 행사 기록을 작은 단위로 보관합니다."
+  />
+
+  <section class="section archive-grid">
+    {
+      archiveItems.map((item) => (
+        <article class="archive-card">
+          <p class="small-caps">{item.date} · {item.type}</p>
+          <h2>{item.title}</h2>
+          <p>{item.description}</p>
+        </article>
+      ))
+    }
+  </section>
+</BaseLayout>

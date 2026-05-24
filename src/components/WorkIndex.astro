@@ -1,0 +1,28 @@
+---
+import type { Work } from "../data/works";
+
+const { works } = Astro.props as { works: Work[] };
+---
+
+<div class="work-list">
+  {
+    works.map((work) => (
+      <article class="work-row">
+        <div class="work-meta">
+          <span>{work.year}</span>
+          <span>{work.genre}</span>
+          <span>{work.status}</span>
+        </div>
+        <div class="work-body">
+          <h2>{work.title}</h2>
+          <p class="muted">{work.publication}</p>
+          <p>{work.excerpt}</p>
+          {work.note && <p class="work-note">{work.note}</p>}
+          <ul class="tag-list" aria-label={`${work.title} 키워드`}>
+            {work.keywords.map((keyword) => <li>{keyword}</li>)}
+          </ul>
+        </div>
+      </article>
+    ))
+  }
+</div>

@@ -1,0 +1,35 @@
+---
+import PageIntro from "../components/PageIntro.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { cvSections } from "../data/cv";
+---
+
+<BaseLayout title="이력">
+  <PageIntro
+    eyebrow="Curriculum Vitae"
+    title="이력"
+    description="학력, 발표, 게재, 편집 활동을 연도별로 기록합니다. 새 항목은 데이터 파일에 추가하면 됩니다."
+  />
+
+  <section class="section cv-wrap">
+    {
+      cvSections.map((section) => (
+        <article class="cv-section">
+          <h2>{section.title}</h2>
+          <ol>
+            {section.items.map((item) => (
+              <li>
+                <time datetime={item.year}>{item.year}</time>
+                <div>
+                  <h3>{item.title}</h3>
+                  {item.organization && <p class="muted">{item.organization}</p>}
+                  {item.detail && <p>{item.detail}</p>}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </article>
+      ))
+    }
+  </section>
+</BaseLayout>

@@ -1,0 +1,75 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import WorkIndex from "../components/WorkIndex.astro";
+import { archiveItems } from "../data/archive";
+import { featuredWorks } from "../data/works";
+import { researchProjects } from "../data/research";
+import { site } from "../data/site";
+---
+
+<BaseLayout title={site.title}>
+  <section class="home-hero section">
+    <div class="home-copy">
+      <p class="eyebrow">Poetry · Research · Criticism</p>
+      <h1>시와 비평을 함께 보관하는 조용한 문학 아카이브</h1>
+      <p class="lede">
+        발표작, 미발표 원고, 연구 노트, 비평의 초고를 한 곳에 정리합니다.
+        이곳은 홍보용 소개 페이지가 아니라 읽기와 쓰기의 경과를 남기는 작업실에 가깝습니다.
+      </p>
+      <div class="hero-links" aria-label="주요 바로가기">
+        <a href="/works/">작품 보기</a>
+        <a href="/research/">연구 주제</a>
+        <a href="/cv/">이력 정리</a>
+      </div>
+    </div>
+    <figure class="folio-plate">
+      <img src="/assets/folio-plate.png" alt="흑백 문예지 지면을 연상시키는 추상 이미지" />
+      <figcaption>folio plate, notes in progress</figcaption>
+    </figure>
+  </section>
+
+  <section class="section two-column">
+    <div>
+      <p class="eyebrow">Current Focus</p>
+      <h2>최근 연구 관심</h2>
+    </div>
+    <div class="stack">
+      {
+        researchProjects.slice(0, 2).map((project) => (
+          <article class="text-block">
+            <p class="small-caps">{project.period} · {project.status}</p>
+            <h3>{project.title}</h3>
+            <p>{project.summary}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <p class="eyebrow">Selected Works</p>
+      <h2>최근 작품</h2>
+      <a href="/works/">전체 작품</a>
+    </div>
+    <WorkIndex works={featuredWorks} />
+  </section>
+
+  <section class="section archive-strip">
+    <div>
+      <p class="eyebrow">Archive</p>
+      <h2>최근 기록</h2>
+    </div>
+    <ol>
+      {
+        archiveItems.slice(0, 3).map((item) => (
+          <li>
+            <time datetime={item.date}>{item.date}</time>
+            <span>{item.type}</span>
+            <strong>{item.title}</strong>
+          </li>
+        ))
+      }
+    </ol>
+  </section>
+</BaseLayout>

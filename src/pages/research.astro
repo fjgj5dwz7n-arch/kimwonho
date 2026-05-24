@@ -1,0 +1,33 @@
+---
+import PageIntro from "../components/PageIntro.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { researchProjects } from "../data/research";
+---
+
+<BaseLayout title="연구">
+  <PageIntro
+    eyebrow="Research"
+    title="연구"
+    description="현대시 연구와 비평적 질문을 프로젝트 단위로 정리합니다."
+  />
+
+  <section class="section research-list">
+    {
+      researchProjects.map((project) => (
+        <article class="research-item">
+          <div>
+            <p class="small-caps">{project.period}</p>
+            <h2>{project.title}</h2>
+            <p class="muted">{project.status}</p>
+          </div>
+          <div>
+            <p>{project.summary}</p>
+            <ul class="question-list">
+              {project.questions.map((question) => <li>{question}</li>)}
+            </ul>
+          </div>
+        </article>
+      ))
+    }
+  </section>
+</BaseLayout>

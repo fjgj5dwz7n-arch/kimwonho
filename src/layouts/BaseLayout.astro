@@ -1,0 +1,35 @@
+---
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import { site } from "../data/site";
+import "../styles/global.css";
+
+const {
+  title = site.title,
+  description = site.description,
+} = Astro.props;
+
+const pageTitle = title === site.title ? site.title : `${title} | ${site.title}`;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#fbfbf8" />
+    <title>{pageTitle}</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" as="image" href="/assets/folio-plate.png" />
+  </head>
+  <body>
+    <a class="skip-link" href="#content">본문으로 이동</a>
+    <SiteHeader currentPath={Astro.url.pathname} />
+    <main id="content">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>

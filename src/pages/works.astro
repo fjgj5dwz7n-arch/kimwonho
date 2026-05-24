@@ -1,0 +1,18 @@
+---
+import PageIntro from "../components/PageIntro.astro";
+import WorkIndex from "../components/WorkIndex.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { works } from "../data/works";
+---
+
+<BaseLayout title="작품">
+  <PageIntro
+    eyebrow="Works"
+    title="작품"
+    description="시, 비평, 산문, 번역 등 문학 활동의 결과물을 연도와 장르별로 정리합니다."
+  />
+
+  <section class="section">
+    <WorkIndex works={works} />
+  </section>
+</BaseLayout>

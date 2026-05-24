@@ -1,0 +1,33 @@
+---
+import PageIntro from "../components/PageIntro.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { site } from "../data/site";
+---
+
+<BaseLayout title="소개">
+  <PageIntro
+    eyebrow="Profile"
+    title="소개"
+    description="시를 쓰고, 현대시를 읽고, 비평의 언어를 천천히 다듬는 연구자 지망생의 프로필입니다."
+  />
+
+  <section class="section prose-grid">
+    <aside>
+      <p class="small-caps">Based in {site.location}</p>
+      <p>{site.role}</p>
+    </aside>
+    <div class="prose">
+      <p>
+        이 포트폴리오는 작품 목록과 연구 관심, 세미나 발표, 읽기 기록을 한곳에 모으기 위해 만들었습니다.
+        시 쓰기와 비평 쓰기를 별개의 활동으로 분리하기보다, 서로의 문장 감각을 조정하는 두 개의 방법으로 다룹니다.
+      </p>
+      <p>
+        주요 관심사는 한국 현대시의 여백, 도시적 감각, 인용의 윤리, 비평문 안에서 독자의 위치가 형성되는 방식입니다.
+        문학 활동의 결과뿐 아니라, 초고와 메모, 참고 문헌, 발표 이후의 수정 방향까지 기록합니다.
+      </p>
+      <p>
+        이 페이지의 문장은 모두 수정 가능한 초안입니다. 실제 이름, 소속, 발표 이력, 작품 링크를 추가하면 개인 포트폴리오로 바로 확장할 수 있습니다.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
