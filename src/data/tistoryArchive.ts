@@ -130,7 +130,7 @@ export const tistoryArchive = [
     "date": "2025-09-02T18:18:31+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/35",
     "type": "증명",
-    "summary": "한국예술인복지재단 예술인 예술활동증명 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "한국예술인복지재단 예술인 예술활동증명 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -165,7 +165,7 @@ export const tistoryArchive = [
     "date": "2025-09-02T18:07:55+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/34",
     "type": "인터뷰",
-    "summary": "웹진 포엣푸념-푸념 인터뷰 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "웹진 포엣푸념-푸념 인터뷰 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -707,7 +707,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:19:37+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/9",
     "type": "수상",
-    "summary": "펄벅기념문학상 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "펄벅기념문학상 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -747,7 +747,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:19:30+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/10",
     "type": "게재",
-    "summary": "P.S 시와 징후 2023 겨울 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "P.S 시와 징후 2023 겨울 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -851,7 +851,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:19:16+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/12",
     "type": "게재",
-    "summary": "황해문화 2023 겨울 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "황해문화 2023 겨울 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -891,7 +891,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:19:03+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/13",
     "type": "게재",
-    "summary": "파란 2023 가을 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "파란 2023 가을 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -938,7 +938,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:18:57+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/14",
     "type": "수상",
-    "summary": "기아 인스파이어링 문학상 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "기아 인스파이어링 문학상 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -966,7 +966,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:18:52+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/15",
     "type": "게재",
-    "summary": "시산맥 2023 여름 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "시산맥 2023 여름 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -1056,7 +1056,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:18:36+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/18",
     "type": "게재",
-    "summary": "가글 2호 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "가글 2호 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -1266,7 +1266,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:18:20+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/21",
     "type": "수상",
-    "summary": "경남청년문학상 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "경남청년문학상 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -1308,7 +1308,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:18:10+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/22",
     "type": "수상",
-    "summary": "전주동네책방문학상 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "전주동네책방문학상 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -1355,7 +1355,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:18:00+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/24",
     "type": "게재",
-    "summary": "같이 가는 기분 2022 봄 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "같이 가는 기분 2022 봄 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -1459,7 +1459,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:17:35+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/26",
     "type": "수상",
-    "summary": "의정부전국문학공모전 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "의정부전국문학공모전 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -1494,7 +1494,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:16:49+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/32",
     "type": "입주",
-    "summary": "완산도서관 자작사색(전문작가 집필실) 입주작가 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "완산도서관 자작사색(전문작가 집필실) 입주작가 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -1550,7 +1550,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:16:44+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/30",
     "type": "증명",
-    "summary": "한국예술인복지재단 신진예술인 예술활동증명 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "한국예술인복지재단 신진예술인 예술활동증명 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -1585,7 +1585,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:16:39+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/33",
     "type": "지원",
-    "summary": "경남문화예술진흥원 지역문화예술육성지원사업 공모: 문학_개인(생애최초) 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "경남문화예술진흥원 지역문화예술육성지원사업 공모: 문학_개인(생애최초) 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -1606,7 +1606,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:16:33+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/29",
     "type": "게재",
-    "summary": "한국문화예술위원회 후원 전국 예비 극작가 인큐베이팅 프로젝트-희곡 읽기 좋은 날 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "한국문화예술위원회 후원 전국 예비 극작가 인큐베이팅 프로젝트-희곡 읽기 좋은 날 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {
@@ -1641,7 +1641,7 @@ export const tistoryArchive = [
     "date": "2025-06-17T06:16:28+09:00",
     "sourceUrl": "https://kimwonho.tistory.com/28",
     "type": "입주",
-    "summary": "토지문화재단 문인 창작실 입주작가 관련 이미지와 링크를 이전한 기록입니다.",
+    "summary": "토지문화재단 문인 창작실 입주작가 관련 이미지와 링크를 정리한 기록입니다.",
     "body": [],
     "images": [
       {

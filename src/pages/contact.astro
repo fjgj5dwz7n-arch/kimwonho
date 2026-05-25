@@ -8,20 +8,10 @@ import { site } from "../data/site";
   <PageIntro
     eyebrow="Contact"
     title="연락"
-    description="작품 청탁, 세미나, 합평, 연구 관련 문의를 위한 연락처입니다."
   />
 
-  <section class="section contact-panel">
-    <div>
-      <p class="small-caps">Email</p>
-      <a class="contact-link" href={`mailto:${site.email}`}>{site.email}</a>
-    </div>
-    <div>
-      <p class="small-caps">Note</p>
-      <p>
-        문의 시 목적, 일정, 요청 범위를 간단히 적어주시면 답장을 준비하기 쉽습니다.
-        실제 사용 전 `src/data/site.ts`에서 이메일과 이름을 바꾸세요.
-      </p>
-    </div>
+  <section class="section contact-panel contact-minimal">
+    <p class="small-caps">Email</p>
+    <a class="contact-link" href={`mailto:${site.email}`}>{site.email}</a>
   </section>
 </BaseLayout>

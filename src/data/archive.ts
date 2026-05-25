@@ -13,5 +13,5 @@ export const archiveItems: ArchiveItem[] = tistoryArchive.map((item) => ({
   title: item.title,
   type: item.type,
   description: item.summary,
-  href: `/archive/${item.slug}/`,
+  href: `/works/${item.slug}/`,
 }));
