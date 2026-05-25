@@ -1,10 +1,10 @@
 export const site = {
   title: "문학 포트폴리오",
-  author: "작가명",
+  author: "김원호",
   role: "시인, 현대시 연구자, 문학비평가 지망생",
   description:
-    "시와 현대시 연구, 비평의 초고와 발표 이력을 정리하는 한국어 문학 포트폴리오.",
-  email: "hello@example.com",
+    "김원호의 시, 희곡, 에세이, 발표 이력과 문학 활동 자료를 정리하는 한국어 문학 포트폴리오.",
+  email: "ssonss81@naver.com",
   location: "Seoul, Korea",
 };
 

@@ -1,23 +1,34 @@
 ---
 import PageIntro from "../components/PageIntro.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { archiveItems } from "../data/archive";
+import { tistoryArchive } from "../data/tistoryArchive";
 ---
 
 <BaseLayout title="아카이브">
   <PageIntro
     eyebrow="Archive"
     title="아카이브"
-    description="초고, 연구 노트, 서지, 행사 기록을 작은 단위로 보관합니다."
+    description="기존 티스토리 아카이브의 34개 글을 이미지, 링크, 본문 메모와 함께 이전했습니다."
   />
 
-  <section class="section archive-grid">
+  <section class="section archive-index">
     {
-      archiveItems.map((item) => (
-        <article class="archive-card">
-          <p class="small-caps">{item.date} · {item.type}</p>
-          <h2>{item.title}</h2>
-          <p>{item.description}</p>
+      tistoryArchive.map((item) => (
+        <article class="archive-entry">
+          <a href={`/archive/${item.slug}/`} aria-label={`${item.title} 상세 보기`}>
+            {item.images[0] && (
+              <img src={item.images[0].src} alt="" loading="lazy" />
+            )}
+            <div>
+              <p class="small-caps">{item.date.slice(0, 10)} · {item.type}</p>
+              <h2>{item.title}</h2>
+              <p>{item.summary}</p>
+              <p class="archive-counts">
+                이미지 {item.images.length}개
+                {item.links.length > 0 && ` · 링크 ${item.links.length}개`}
+              </p>
+            </div>
+          </a>
         </article>
       ))
     }

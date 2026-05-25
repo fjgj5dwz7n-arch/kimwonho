@@ -27,8 +27,13 @@ Vercel에서는 `vercel.json`의 설정에 따라 `npm run build`를 실행하�
 - 작품 항목: `src/data/works.ts`
 - 이력 항목: `src/data/cv.ts`
 - 연구 항목: `src/data/research.ts`
-- 아카이브 항목: `src/data/archive.ts`
+- 티스토리 이전 아카이브: `src/data/tistoryArchive.ts`
+- 홈의 최근 아카이브 목록: `src/data/archive.ts`
 - 기본 프로필과 연락처: `src/data/site.ts`
+
+티스토리에서 다시 가져와야 할 때는 HTML을 내려받은 뒤 `scripts/import-tistory.mjs`,
+이미지는 `scripts/download-tistory-images.mjs`를 사용합니다. 지금 저장소에는
+34개 글과 144개 이미지가 로컬 정적 파일로 들어 있습니다.
 
 ## 시각 자산 재생성
 
