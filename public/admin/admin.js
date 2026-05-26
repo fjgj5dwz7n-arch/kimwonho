@@ -178,6 +178,7 @@ function renderCv() {
       ["year", "연도", item.year],
       ["title", "제목", item.title],
       ["organization", "기관/매체", item.organization || ""],
+      ["href", "관련 링크", item.href || ""],
       ["detail", "설명", item.detail || "", "textarea"],
     ]));
   });
@@ -382,6 +383,7 @@ function bindActions() {
       ["year", "연도", ""],
       ["title", "제목", ""],
       ["organization", "기관/매체", ""],
+      ["href", "관련 링크", ""],
       ["detail", "설명", "", "textarea"],
     ]));
   });

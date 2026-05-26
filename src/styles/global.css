@@ -521,6 +521,18 @@ h3 {
   font-size: 21px;
 }
 
+.cv-section h3 a {
+  color: inherit;
+  text-decoration-color: rgba(31, 102, 142, 0.45);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.cv-section h3 a:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
 .archive-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

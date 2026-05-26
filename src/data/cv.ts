@@ -5,6 +5,7 @@ export type CvItem = {
   title: string;
   organization?: string;
   detail?: string;
+  href?: string;
 };
 
 export type CvSection = {
