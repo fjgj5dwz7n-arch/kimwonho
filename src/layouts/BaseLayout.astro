@@ -1,7 +1,7 @@
 ---
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
-import { site } from "../data/site";
+import { site, siteAssets } from "../data/site";
 import "../styles/global.css";
 
 const {
@@ -22,7 +22,7 @@ const pageTitle = title === site.title ? site.title : `${title} | ${site.title}`
     <meta name="theme-color" content="#fbfbf8" />
     <title>{pageTitle}</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="preload" as="image" href="/assets/cover-photo.jpeg" />
+    <link rel="preload" as="image" href={siteAssets.coverImage} />
   </head>
   <body>
     <a class="skip-link" href="#content">본문으로 이동</a>

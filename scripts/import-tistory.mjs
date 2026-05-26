@@ -2,7 +2,7 @@ import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import { extname, join } from "node:path";
 
 const POST_DIR = "/private/tmp/kimwonho-posts";
-const OUT_DATA = "src/data/tistoryArchive.ts";
+const OUT_DATA = "src/data/records.json";
 const OUT_MANIFEST = "/private/tmp/kimwonho-image-downloads.json";
 
 const postOrder = [
@@ -169,7 +169,7 @@ for (const id of postOrder) {
     type: classify(title),
     summary:
       paragraphize(bodyText)[0] ||
-      `${cleanTitle(title)} 관련 이미지와 링크를 이전한 기록입니다.`,
+      `${cleanTitle(title)} 관련 이미지와 링크를 정리한 기록입니다.`,
     body: paragraphize(bodyText),
     images,
     links,
@@ -179,24 +179,6 @@ for (const id of postOrder) {
 await mkdir("src/data", { recursive: true });
 await mkdir("public/assets/tistory", { recursive: true });
 await writeFile(OUT_MANIFEST, JSON.stringify(imageDownloads, null, 2));
-await writeFile(
-  OUT_DATA,
-  `export type TistoryArchiveType = "프로필" | "게재" | "수상" | "입주" | "증명" | "인터뷰" | "지원";\n\n` +
-    `export type TistoryArchiveEntry = {\n` +
-    `  id: number;\n` +
-    `  slug: string;\n` +
-    `  title: string;\n` +
-    `  originalTitle: string;\n` +
-    `  date: string;\n` +
-    `  sourceUrl: string;\n` +
-    `  type: TistoryArchiveType;\n` +
-    `  summary: string;\n` +
-    `  body: string[];\n` +
-    `  images: Array<{ src: string; originalSrc: string; alt: string; width?: number; height?: number }>;\n` +
-    `  links: Array<{ href: string; label: string }>;\n` +
-    `};\n\n` +
-    `export const tistoryArchive = ${JSON.stringify(entries, null, 2)} satisfies TistoryArchiveEntry[];\n\n` +
-    `export const recentTistoryArchive = tistoryArchive.slice(0, 6);\n`
-);
+await writeFile(OUT_DATA, `${JSON.stringify(entries, null, 2)}\n`);
 
 console.log(`Imported ${entries.length} posts and ${imageDownloads.length} images.`);

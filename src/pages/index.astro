@@ -1,24 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { archiveItems } from "../data/archive";
+import content from "../data/content.json";
 import { researchProjects } from "../data/research";
-import { site } from "../data/site";
+import { site, siteAssets } from "../data/site";
 ---
 
 <BaseLayout title={site.title}>
   <section class="home-hero section">
     <img
       class="hero-photo"
-      src="/assets/cover-photo.jpeg"
-      alt="전시장 안에서 큰 회화 앞에 선 김원호"
+      src={siteAssets.coverImage}
+      alt={content.home.coverAlt}
     />
     <div class="home-copy">
-      <p class="eyebrow">Kim Wonho</p>
-      <h1>현대시를 공부하는 학생</h1>
-      <p class="lede">
-        시를 쓰고 읽으며, 현대시의 문장과 장면을 오래 들여다봅니다.
-        이곳에는 작품, 연구 관심, 발표 이력과 문학 활동의 기록을 차분히 정리합니다.
-      </p>
+      <p class="eyebrow">{content.home.eyebrow}</p>
+      <h1>{content.home.headline}</h1>
+      <p class="lede">{content.home.lede}</p>
       <div class="hero-links" aria-label="주요 바로가기">
         <a href="/works/">작품·기록</a>
         <a href="/research/">연구</a>

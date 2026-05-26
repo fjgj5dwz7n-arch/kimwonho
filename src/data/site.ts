@@ -1,12 +1,7 @@
-export const site = {
-  title: "김원호",
-  author: "김원호",
-  role: "현대시를 공부하는 학생",
-  description:
-    "김원호의 시, 희곡, 에세이, 연구 관심과 문학 활동을 정리하는 한국어 문학 포트폴리오.",
-  email: "ssonss81@naver.com",
-  location: "Seoul, Korea",
-};
+import content from "./content.json";
+
+export const site = content.site;
+export const siteAssets = content.assets;
 
 export const navItems = [
   { href: "/", label: "홈" },

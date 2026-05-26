@@ -1,5 +1,5 @@
 ---
-import { navItems, site } from "../data/site";
+import { navItems, site, siteAssets } from "../data/site";
 
 const { currentPath = "/" } = Astro.props;
 
@@ -17,7 +17,7 @@ const isActive = (href: string) => {
 <header class="site-header">
   <a class="brand" href="/" aria-label={`${site.title} 홈`}>
     <span class="brand-mark" aria-hidden="true">
-      <img src="/assets/profile-photo.jpeg" alt="" />
+      <img src={siteAssets.profileImage} alt="" />
     </span>
     <span>
       <strong>{site.author}</strong>

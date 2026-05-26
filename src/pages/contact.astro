@@ -1,17 +1,18 @@
 ---
 import PageIntro from "../components/PageIntro.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import content from "../data/content.json";
 import { site } from "../data/site";
 ---
 
 <BaseLayout title="연락">
   <PageIntro
-    eyebrow="Contact"
-    title="연락"
+    eyebrow={content.contact.eyebrow}
+    title={content.contact.title}
   />
 
   <section class="section contact-panel contact-minimal">
-    <p class="small-caps">Email</p>
+    <p class="small-caps">{content.contact.emailLabel}</p>
     <a class="contact-link" href={`mailto:${site.email}`}>{site.email}</a>
   </section>
 </BaseLayout>

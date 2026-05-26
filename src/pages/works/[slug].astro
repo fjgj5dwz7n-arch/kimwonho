@@ -22,8 +22,12 @@ const { item } = Astro.props as { item: TistoryArchiveEntry };
 
   <article class="section archive-detail">
     <div class="archive-detail-meta">
-      <p class="small-caps">Reference</p>
-      <a href={item.sourceUrl} target="_blank" rel="noreferrer">원문</a>
+      {item.sourceUrl && (
+        <>
+          <p class="small-caps">Reference</p>
+          <a href={item.sourceUrl} target="_blank" rel="noreferrer">원문</a>
+        </>
+      )}
       <p class="small-caps">Materials</p>
       <p>이미지 {item.images.length}개 · 링크 {item.links.length}개</p>
     </div>
