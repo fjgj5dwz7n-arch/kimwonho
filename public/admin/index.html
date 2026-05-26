@@ -20,9 +20,14 @@
       <section class="panel auth-panel" id="auth-panel">
         <h2>GitHub 연결</h2>
         <p>
-          저장하려면 GitHub Personal Access Token이 필요합니다. 토큰은 이 브라우저에만 보관되고,
-          서버로 따로 저장하지 않습니다.
+          저장하려면 GitHub 편집 토큰이 필요합니다. 비밀번호가 아니라 이 사이트 편집용 임시 열쇠이며,
+          이 브라우저에만 보관됩니다.
         </p>
+        <ol class="setup-list">
+          <li><strong>토큰 만들기</strong>를 누르고 GitHub에서 <strong>Generate token</strong>까지 진행합니다.</li>
+          <li>생성된 <code>github_pat_...</code> 값을 복사합니다.</li>
+          <li>아래 칸에 붙여넣고 <strong>불러오기</strong>를 누릅니다.</li>
+        </ol>
         <label>
           <span>GitHub token</span>
           <input id="token-input" type="password" autocomplete="off" placeholder="github_pat_..." />
@@ -31,12 +36,15 @@
           <button id="connect-button" type="button">불러오기</button>
           <a
             class="subtle-link"
-            href="https://github.com/settings/personal-access-tokens/new"
+            href="https://github.com/settings/personal-access-tokens/new?name=kimwonho-site-editor&description=kimwonho.vercel.app%20portfolio%20editor&target_name=fjgj5dwz7n-arch&expires_in=365&contents=write"
             target="_blank"
             rel="noreferrer"
           >토큰 만들기</a>
         </div>
-        <p class="hint">권한은 이 저장소의 Contents: Read and write 만 있으면 됩니다.</p>
+        <p class="hint">
+          GitHub 화면에서 저장소는 <strong>kimwonho</strong>, 권한은 <strong>Contents: Read and write</strong>만 있으면 됩니다.
+          토큰은 채팅에 보내지 마세요.
+        </p>
       </section>
 
       <section class="editor hidden" id="editor">

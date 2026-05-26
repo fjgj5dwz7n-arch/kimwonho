@@ -108,6 +108,17 @@ h2 {
   max-width: 680px;
 }
 
+.setup-list {
+  display: grid;
+  gap: 8px;
+  margin: 18px 0 22px;
+  padding-left: 22px;
+}
+
+.setup-list code {
+  color: var(--accent);
+}
+
 .tabs {
   display: flex;
   flex-wrap: wrap;
