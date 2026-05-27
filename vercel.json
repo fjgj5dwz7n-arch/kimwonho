@@ -4,7 +4,9 @@
   "installCommand": "npm install",
   "outputDirectory": "dist",
   "redirects": [
-    { "source": "/archive", "destination": "/works", "permanent": true },
-    { "source": "/archive/:slug", "destination": "/works/:slug", "permanent": true }
+    { "source": "/works", "destination": "/cv", "permanent": true },
+    { "source": "/works/:slug", "destination": "/cv", "permanent": true },
+    { "source": "/archive", "destination": "/cv", "permanent": true },
+    { "source": "/archive/:slug", "destination": "/cv", "permanent": true }
   ]
 }

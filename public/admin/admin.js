@@ -8,13 +8,11 @@ const files = {
   content: "src/data/content.json",
   cv: "src/data/cv.json",
   research: "src/data/research.json",
-  records: "src/data/records.json",
 };
 
 const state = {
   token: sessionStorage.getItem("githubToken") || "",
   files: {},
-  recordIndex: 0,
 };
 
 window.__portfolioEditorTransport = {
@@ -116,12 +114,6 @@ async function saveJson(key, message) {
 function bindTabs() {
   $$(".tab").forEach((tab) => {
     tab.addEventListener("click", () => {
-      try {
-        saveCurrentRecord();
-      } catch (error) {
-        setStatus(error.message);
-        return;
-      }
       $$(".tab").forEach((item) => item.classList.remove("active"));
       $$(".tab-panel").forEach((panel) => panel.classList.add("hidden"));
       tab.classList.add("active");
@@ -252,64 +244,6 @@ function collectRepeatItems(kind) {
   });
 }
 
-function renderRecordSelect() {
-  const select = $("#record-select");
-  select.innerHTML = "";
-  state.files.records.data.forEach((record, index) => {
-    const option = document.createElement("option");
-    option.value = String(index);
-    option.textContent = `${record.date.slice(0, 10)} · ${record.title}`;
-    select.append(option);
-  });
-  select.value = String(state.recordIndex);
-  renderRecord();
-}
-
-function renderRecord() {
-  const record = state.files.records.data[state.recordIndex];
-  if (!record) return;
-  $("#record-title").value = record.title || "";
-  $("#record-date").value = record.date || "";
-  $("#record-type").value = record.type || "게재";
-  $("#record-source").value = record.sourceUrl || "";
-  $("#record-summary").value = record.summary || "";
-  $("#record-body").value = (record.body || []).join("\n");
-  $("#record-images").value = JSON.stringify(record.images || [], null, 2);
-  $("#record-links").value = JSON.stringify(record.links || [], null, 2);
-}
-
-function slugify(value) {
-  return value
-    .replace(/[《》]/g, "")
-    .replace(/[^0-9A-Za-z가-힣]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .toLowerCase();
-}
-
-function saveCurrentRecord() {
-  const records = state.files.records?.data;
-  if (!records || records.length === 0) return;
-  const record = records[state.recordIndex];
-  if (!record) return;
-  record.title = $("#record-title").value.trim();
-  record.originalTitle = record.originalTitle || record.title;
-  record.slug = record.slug || `${record.id}-${slugify(record.title)}`;
-  record.date = $("#record-date").value.trim();
-  record.type = $("#record-type").value;
-  record.sourceUrl = $("#record-source").value.trim();
-  record.summary = $("#record-summary").value.trim();
-  record.body = $("#record-body").value
-    .split("\n")
-    .map((line) => line.trim())
-    .filter(Boolean);
-  try {
-    record.images = JSON.parse($("#record-images").value || "[]");
-    record.links = JSON.parse($("#record-links").value || "[]");
-  } catch (error) {
-    throw new Error("작품·기록의 이미지 JSON 또는 링크 JSON 형식이 올바르지 않습니다.");
-  }
-}
-
 async function uploadAsset() {
   const input = $("#asset-file");
   const file = input.files?.[0];
@@ -352,13 +286,11 @@ function renderAll() {
   renderContent();
   renderCv();
   renderResearch();
-  renderRecordSelect();
 }
 
 async function saveAll(event) {
   event.preventDefault();
   try {
-    saveCurrentRecord();
     collectContent();
     collectCv();
     collectResearch();
@@ -366,7 +298,6 @@ async function saveAll(event) {
     await saveJson("content", "Update portfolio content");
     await saveJson("cv", "Update portfolio CV");
     await saveJson("research", "Update portfolio research");
-    await saveJson("records", "Update portfolio records");
     setStatus("저장 완료. Vercel 배포까지 보통 1-2분 걸립니다.");
   } catch (error) {
     setStatus(error.message);
@@ -395,43 +326,6 @@ function bindActions() {
       ["summary", "요약", "", "textarea"],
       ["questions", "질문", "", "textarea"],
     ]));
-  });
-  $("#record-select").addEventListener("change", () => {
-    try {
-      saveCurrentRecord();
-    } catch (error) {
-      setStatus(error.message);
-      $("#record-select").value = String(state.recordIndex);
-      return;
-    }
-    state.recordIndex = Number($("#record-select").value);
-    renderRecord();
-  });
-  $("#add-record-button").addEventListener("click", () => {
-    saveCurrentRecord();
-    const id = Date.now();
-    const record = {
-      id,
-      slug: `${id}-새-기록`,
-      title: "새 기록",
-      originalTitle: "새 기록",
-      date: new Date().toISOString(),
-      sourceUrl: "",
-      type: "게재",
-      summary: "",
-      body: [],
-      images: [],
-      links: [],
-    };
-    state.files.records.data.unshift(record);
-    state.recordIndex = 0;
-    renderRecordSelect();
-  });
-  $("#delete-record-button").addEventListener("click", () => {
-    if (!confirm("현재 기록을 삭제할까요?")) return;
-    state.files.records.data.splice(state.recordIndex, 1);
-    state.recordIndex = 0;
-    renderRecordSelect();
   });
 }
 

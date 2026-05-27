@@ -1,9 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { archiveItems } from "../data/archive";
 import content from "../data/content.json";
+import { cvSections } from "../data/cv";
 import { researchProjects } from "../data/research";
 import { site, siteAssets } from "../data/site";
+
+const recentCvItems = [...(cvSections[0]?.items ?? [])]
+  .filter((item) => item.year !== "현재")
+  .slice(-5)
+  .reverse();
 ---
 
 <BaseLayout title={site.title}>
@@ -18,9 +23,9 @@ import { site, siteAssets } from "../data/site";
       <h1>{content.home.headline}</h1>
       <p class="lede">{content.home.lede}</p>
       <div class="hero-links" aria-label="주요 바로가기">
-        <a href="/works/">작품·기록</a>
-        <a href="/research/">연구</a>
         <a href="/cv/">이력</a>
+        <a href="/research/">연구</a>
+        <a href="/contact/">연락</a>
       </div>
     </div>
   </section>
@@ -45,17 +50,17 @@ import { site, siteAssets } from "../data/site";
 
   <section class="section">
     <div class="section-heading">
-      <p class="eyebrow">Works & Records</p>
-      <h2>최근 작품과 기록</h2>
-      <a href="/works/">전체 보기</a>
+      <p class="eyebrow">Curriculum Vitae</p>
+      <h2>최근 이력</h2>
+      <a href="/cv/">전체 보기</a>
     </div>
     <div class="archive-strip archive-strip-single">
       <ol>
       {
-        archiveItems.slice(0, 5).map((item) => (
+        recentCvItems.map((item) => (
           <li>
-            <time datetime={item.date}>{item.date}</time>
-            <span>{item.type}</span>
+            <time datetime={item.year}>{item.year}</time>
+            <span>{item.organization}</span>
             {item.href ? <a href={item.href}><strong>{item.title}</strong></a> : <strong>{item.title}</strong>}
           </li>
         ))
