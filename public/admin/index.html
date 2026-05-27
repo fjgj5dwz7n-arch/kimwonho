@@ -52,7 +52,6 @@
           <button class="tab active" data-tab="home" type="button">홈·소개</button>
           <button class="tab" data-tab="cv" type="button">이력</button>
           <button class="tab" data-tab="research" type="button">연구</button>
-          <button class="tab" data-tab="records" type="button">작품·기록</button>
           <button class="tab" data-tab="assets" type="button">사진</button>
         </nav>
 
@@ -98,41 +97,6 @@
               <button id="add-research-button" type="button">항목 추가</button>
             </div>
             <div id="research-list" class="repeat-list"></div>
-          </section>
-
-          <section class="tab-panel hidden" data-panel="records">
-            <div class="section-head">
-              <h2>작품·기록</h2>
-              <button id="add-record-button" type="button">새 기록</button>
-            </div>
-            <label>
-              <span>편집할 기록</span>
-              <select id="record-select"></select>
-            </label>
-            <div class="grid-2">
-              <label><span>제목</span><input id="record-title" /></label>
-              <label><span>날짜</span><input id="record-date" /></label>
-              <label>
-                <span>분류</span>
-                <select id="record-type">
-                  <option>프로필</option>
-                  <option>게재</option>
-                  <option>수상</option>
-                  <option>입주</option>
-                  <option>증명</option>
-                  <option>인터뷰</option>
-                  <option>지원</option>
-                </select>
-              </label>
-              <label><span>원문 URL</span><input id="record-source" /></label>
-            </div>
-            <label><span>요약</span><textarea id="record-summary" rows="3"></textarea></label>
-            <label><span>본문</span><textarea id="record-body" rows="8" placeholder="한 줄에 한 문단"></textarea></label>
-            <label><span>이미지 JSON</span><textarea id="record-images" rows="7"></textarea></label>
-            <label><span>링크 JSON</span><textarea id="record-links" rows="5"></textarea></label>
-            <div class="button-row">
-              <button id="delete-record-button" class="danger" type="button">기록 삭제</button>
-            </div>
           </section>
 
           <section class="tab-panel hidden" data-panel="assets">

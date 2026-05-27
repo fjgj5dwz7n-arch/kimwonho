@@ -6,7 +6,6 @@ export const siteAssets = content.assets;
 export const navItems = [
   { href: "/", label: "홈" },
   { href: "/about/", label: "소개" },
-  { href: "/works/", label: "작품·기록" },
   { href: "/research/", label: "연구" },
   { href: "/cv/", label: "이력" },
   { href: "/contact/", label: "연락" },

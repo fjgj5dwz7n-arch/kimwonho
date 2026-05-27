@@ -4,10 +4,10 @@
     "items": [
       {
         "year": "2020",
-        "title": "글을 쓰고 읽기 시작",
+        "title": "포트폴리오",
         "organization": "개인 기록",
-        "detail": "2020년 12월 7일 첫 기록.",
-        "href": "/works/39-포트폴리오/"
+        "detail": "2020년 12월 7일 글을 쓰고 읽기 시작했다는 첫 기록.",
+        "href": "/about/"
       },
       {
         "year": "2021",
@@ -84,7 +84,7 @@
         "title": "기아 인스파이어링 문학상",
         "organization": "수상",
         "detail": "제5회 기아 인스파이어링 문학상.",
-        "href": "/works/14-기아-인스파이어링-문학상/"
+        "href": "https://www.kia.com/kr"
       },
       {
         "year": "2023",
@@ -196,7 +196,7 @@
         "title": "완산도서관 자작사색(전문작가 집필실) 입주작가",
         "organization": "입주",
         "detail": "완산도서관 자작자작 책 공작소 4기 입주작가.",
-        "href": "/works/32-완산도서관-자작사색-전문작가-집필실-입주작가/"
+        "href": "https://lib.jeonju.go.kr/wansan"
       },
       {
         "year": "2025",

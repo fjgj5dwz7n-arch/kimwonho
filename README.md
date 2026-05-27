@@ -9,7 +9,7 @@ https://kimwonho.vercel.app
 ## 사이트에서 직접 편집
 
 배포 후 `https://kimwonho.vercel.app/admin/`으로 들어가면 편집실을 사용할 수 있습니다.
-GitHub Personal Access Token을 입력하면 홈 문구, 소개, 이력, 연구, 작품·기록,
+GitHub Personal Access Token을 입력하면 홈 문구, 소개, 이력, 연구,
 프로필 사진과 대문 사진 경로를 수정하고 GitHub에 커밋할 수 있습니다.
 
 토큰은 GitHub에서 Fine-grained personal access token으로 만들고, 이 저장소에 대해
@@ -36,13 +36,10 @@ Vercel에서는 `vercel.json`의 설정에 따라 `npm run build`를 실행하�
 - 홈·소개·연락 문구: `src/data/content.json`
 - 이력 항목: `src/data/cv.json`
 - 연구 항목: `src/data/research.json`
-- 작품·기록 상세 항목: `src/data/records.json`
-- 홈의 최근 기록 목록: `src/data/archive.ts`
 - 기본 프로필과 연락처: `src/data/site.ts`
 
-외부 기록을 다시 가져와야 할 때는 HTML을 내려받은 뒤 `scripts/import-tistory.mjs`,
-이미지는 `scripts/download-tistory-images.mjs`를 사용합니다. 지금 저장소에는
-34개 글과 144개 이미지가 로컬 정적 파일로 들어 있습니다.
+이전 아카이브 원본은 보존용으로 `src/data/records.json`에 남겨 두었습니다.
+공개 사이트에서는 해당 기록을 모두 `src/data/cv.json`의 이력 항목으로 통합해 보여줍니다.
 
 ## 사진 자산
 
