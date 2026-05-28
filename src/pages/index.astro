@@ -2,13 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import content from "../data/content.json";
 import { cvSections } from "../data/cv";
-import { researchProjects } from "../data/research";
 import { site, siteAssets } from "../data/site";
-
-const recentCvItems = [...(cvSections[0]?.items ?? [])]
-  .filter((item) => item.year !== "현재")
-  .slice(-5)
-  .reverse();
 ---
 
 <BaseLayout title={site.title}>
@@ -30,42 +24,42 @@ const recentCvItems = [...(cvSections[0]?.items ?? [])]
     </div>
   </section>
 
-  <section class="section two-column">
-    <div>
-      <p class="eyebrow">Current Focus</p>
-      <h2>최근 연구 관심</h2>
-    </div>
-    <div class="stack">
-      {
-        researchProjects.slice(0, 2).map((project) => (
-          <article class="text-block">
-            <p class="small-caps">{project.period} · {project.status}</p>
-            <h3>{project.title}</h3>
-            <p>{project.summary}</p>
-          </article>
-        ))
-      }
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-heading">
-      <p class="eyebrow">Curriculum Vitae</p>
-      <h2>최근 이력</h2>
-      <a href="/cv/">전체 보기</a>
-    </div>
-    <div class="archive-strip archive-strip-single">
-      <ol>
-      {
-        recentCvItems.map((item) => (
-          <li>
-            <time datetime={item.year}>{item.year}</time>
-            <span>{item.organization}</span>
-            {item.href ? <a href={item.href}><strong>{item.title}</strong></a> : <strong>{item.title}</strong>}
-          </li>
-        ))
-      }
-      </ol>
-    </div>
+  <section class="section cv-wrap home-cv">
+    {
+      cvSections.map((section) => (
+        <article class="cv-section">
+          <div>
+            <p class="eyebrow">Curriculum Vitae</p>
+            <h2>{section.title}</h2>
+          </div>
+          <ol>
+            {section.items.map((item) => (
+              <li>
+                <time datetime={item.year}>{item.year}</time>
+                <div>
+                  <h3>
+                    {
+                      item.href ? (
+                        <a
+                          href={item.href}
+                          target={item.href.startsWith("http") ? "_blank" : undefined}
+                          rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                        >
+                          {item.title}
+                        </a>
+                      ) : (
+                        item.title
+                      )
+                    }
+                  </h3>
+                  {item.organization && <p class="muted">{item.organization}</p>}
+                  {item.detail && <p>{item.detail}</p>}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </article>
+      ))
+    }
   </section>
 </BaseLayout>
